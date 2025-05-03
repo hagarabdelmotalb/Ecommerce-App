@@ -1,0 +1,43 @@
+<section class="w-[90%] mx-auto bg-gray-100 px-5 py-5 rounded">
+    <h1 class="text-3xl text-center text-green-600">{{ 'cart.shopcart' | translate}}</h1>
+    <div class="flex items-center justify-between">
+        <span class="text-green-600 text-1xl " >{{ 'cart.totalPrice' | translate}}:
+            {{cartDetails.totalCartPrice | currency:'GBP'}}
+       </span>
+       <button (click)="clearCart()" class="bg-red-800  text-white border rounded text-xs px-10 py-2" >
+        {{ 'cart.clearCart' | translate}}
+       </button>   
+    </div>
+    @for (product of cartDetails.products; track product.product._id){
+        <div class="grid md:grid-cols-[10%_minmax(0,1fr)]  py-4 border-b-2">
+            <!--=====================image==================-->
+            <div>
+                <img [src]="product.product.imageCover" class="w-full h-[150px]" [alt]="product.product.title">
+            </div>
+    
+            <div class="flex justify-between items-center">
+                <div class="px-4 py-3">
+                    <h3>Title: {{product.product.title}} </h3>
+                    <h4>Price: {{product.price}} </h4>
+                    <button><i class="fas fa-trash-can text-green-600" (click)="deletItemFromCart(product.product._id)" >
+                        {{ 'cart.remove' | translate}}
+                    </i></button>
+                </div>
+                <!--========================btn========================-->
+    
+                <div class="flex items-center gap-4">
+                    <button (click)="CountOfItem(product.product._id , product.count + 1)" class="text-green-600 text-3xl px-2">
+                        <i class="fa-regular fa-square-plus"></i>
+                    </button>
+                    <span> {{product.count}} </span>
+                    <button (click)="CountOfItem(product.product._id , product.count - 1)" class="text-green-600 text-3xl px-2">
+                        <i class="fa-regular fa-square-minus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    }
+    <button class="myBtn my-4" [routerLink]="['/checkout' , cartDetails._id]">
+        {{ 'cart.checkout' | translate}}
+    </button>
+</section>

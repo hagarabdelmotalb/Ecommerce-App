@@ -1,0 +1,104 @@
+<section class="w-10/12 mx-auto">
+    <h2 class="w-11/12 mx-auto text-3xl font-light mb-6">{{'login.login' | translate}}:</h2>
+    <form [formGroup]="loginForm" class="w-11/12 mx-auto" (ngSubmit)="submitForm()">
+        <!--=========================email input===============================-->
+        <div class="mb-2">
+            <label  for="email" class="block mb-2 text-1xl font-normal
+             text-gray-900 dark:text-white">{{'login.email' | translate}}:
+            </label>
+            <input formControlName="email" type="email" id="email" 
+              class="bg-white border border-gray-300 
+              text-gray-900 text-sm rounded-lg focus:ring-blue-500 
+              focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 
+              dark:border-gray-600 dark:placeholder-gray-400 
+              dark:text-white dark:focus:ring-blue-500 
+              dark:focus:border-blue-500"
+            />
+
+            @if(loginForm.get('email')?.errors && loginForm.get('email')?.touched){
+                <div class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+                    <svg class="shrink-0 inline w-4 h-4 me-3 mt-[2px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+                    </svg>
+                    <div>
+                        <ul>
+                          @if(loginForm.get('email')?.getError('required')){
+                            <li> {{'login.errMsgEmailRequired' | translate}} </li>
+                          }
+                          @else if (loginForm.get('email')?.getError('email')){
+                            <li>{{'login.errMsgEmailValid' | translate}}</li>
+                          }
+                      </ul>
+                    </div>
+                </div>
+            } 
+        </div>
+        <!--========================Password input===========================-->
+        <div class="mb-2">
+            <label  for="password" class="block mb-2 text-1xl font-normal 
+            text-gray-900 dark:text-white">{{'login.password' | translate}}:
+            </label>
+            <input formControlName="password" type="password" id="password" 
+            class="bg-white border border-gray-300 text-gray-900 text-sm 
+            rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full 
+            p-2.5 dark:bg-gray-700 dark:border-gray-600 
+            dark:placeholder-gray-400 dark:text-white 
+            dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
+
+            @if(loginForm.get('password')?.errors && loginForm.get('password')?.touched){
+                <div class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+                    <svg class="shrink-0 inline w-4 h-4 me-3 mt-[2px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+                    </svg>
+                    <div>
+                        <ul>
+                          @if(loginForm.get('password')?.getError('required')){
+                            <li>{{'login.errMsgPasswordRequired' | translate}}</li>
+                          }
+                          @else if (loginForm.get('password')?.getError('pattern')){
+                            <li>{{'login.errMsgPasswordValid' | translate}}</li>
+                          }
+                      </ul>
+                    </div>
+                </div>
+            } 
+        </div>
+
+        <div class="text-right">
+          <a 
+          routerLink="/forgetpassword" 
+          routerLinkActive="router-link-active"
+          class="text-blue-600 hover:underline hover:text-blue-800 transition-colors duration-200 dark:text-blue-400 dark:hover:text-blue-300"
+          >
+          {{'login.forgetPassword' | translate}}
+          </a>
+        
+          <button type="submit" class="myBtn">
+            {{'login.login' | translate}}
+            @if(isLoading){
+              <span><i class="fas fa-spinner fa-spin"></i></span>
+            }
+          </button>
+        </div>
+
+        @if(messageError){
+          <div class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+            <div>
+              <ul>
+                  <li><p class="text-red-400 px-4 py-2 "> {{'login.errMsg' | translate}} </p></li>
+              </ul>
+            </div>
+          </div>
+        }
+        @if(isSuccess){
+          <div class="flex p-2 mb-4 text-sm bg-green-400 dark:bg-gray-800 dark:text-red-400" role="alert">
+            <div>
+              <ul>
+                  <li><p class="text-white px-4 py-2 text-lg "> {{'login.sucsses' | translate}} </p></li>
+              </ul>
+            </div>
+          </div>
+        }
+    </form>
+</section>

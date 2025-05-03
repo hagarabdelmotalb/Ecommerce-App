@@ -1,0 +1,75 @@
+@if(productDetails){
+    <section class="max-w-6xl mx-auto px-4 py-6">
+        <h1 class="text-center text-4xl font-normal text-green-600 mb-6">Product Details</h1>
+      
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6  items-center">
+          <!--================================== Product Image==================================-->
+          <div>
+            <img
+              (click)="isZoomOpen = true"
+              [src]="mainImage"
+              [alt]="productDetails.title"
+              class="w-full rounded-lg shadow-md transition-transform duration-300 cursor-zoom-in"
+            />
+            <div class="flex gap-2 mt-4">
+                <img *ngFor="let img of productDetails.images" (click)="mainImage = img" [src]="img"  class="w-20 h-20 rounded-md object-cover border hover:scale-110 transition" />
+            </div>
+              
+          </div>
+      
+          <!--======================================== Product Info==================================== -->
+          <div class="md:col-span-2 space-y-4 ">
+            <h2 class="text-2xl font-semibold text-gray-800">{{ productDetails.title }}</h2>
+            <p class="text-gray-500 leading-relaxed">{{ productDetails.description }}</p>
+      
+            <h3 class="text-sm text-green-500 font-medium uppercase tracking-wide">
+              {{ productDetails.category.name }}
+            </h3>
+    
+            <div class="flex justify-between items-center pt-4">
+                <span class="text-lg font-bold text-gray-800">{{ productDetails.price }} EGP</span>
+
+                <div class="flex items-center space-x-1 text-yellow-400">
+                    @for (num of [1,2,3,4,5].slice(0,productDetails.ratingsAverage); track $index) {
+                      <span><i class="fas fa-star rating-color"></i></span>
+                    }
+                    @if(productDetails.ratingsAverage % 1 !== 0){
+                      <i class="fa-solid fa-star-half-stroke rating-color" ></i>
+                    }
+                  <span class="text-sm text-gray-600">{{ productDetails.ratingsAverage }}</span>
+                </div>
+
+              </div>
+              
+            <button routerLink="/cart" class="bg-green-500 text-white py-2 px-10 border rounded w-full hover:bg-green-600 transition-all duration-500">
+                +Add To Cart
+            </button>
+          </div>
+        </div>
+      </section>
+    
+      <div *ngIf="isZoomOpen" class="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
+        <div class="relative">
+          <img [src]="mainImage" 
+               [style.transform]="'scale(' + zoomLevel + ')'" 
+               class="max-h-[80vh] transition-transform duration-300" />
+          
+          <!--==================================== Zoom In/Out Buttons=============================== -->
+          <div class="fixed bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+            <button (click)="increaseZoom()" class="bg-white p-2 rounded-full">
+                <i class="text-green-600 fa-solid fa-magnifying-glass-plus"></i>
+            </button>
+            <button (click)="decreaseZoom()" class="bg-white p-2 rounded-full">
+                <i class="text-green-600  fa-solid fa-magnifying-glass-minus"></i>
+            </button>
+          </div>
+      
+          <!--=============================== Close Button=================================== -->
+          <button (click)="isZoomOpen = false" class="fixed top-2 left-2 bg-white p-2 rounded">
+            <i class="text-green-600  fa-solid fa-circle-xmark"></i>
+           </button>
+        </div>
+      </div>    
+}
+  
+  

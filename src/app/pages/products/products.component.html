@@ -1,0 +1,35 @@
+<section>
+    <h2 class="text-4xl text-green-600">{{ 'home.products' | translate }}</h2>
+  
+    <input [(ngModel)]="searchText" type="search" placeholder="Search by Name....."
+      class="my-4 bg-white border border-green-600 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block 
+             w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white 
+             dark:focus:ring-blue-500 dark:focus:border-blue-500">
+  
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+      @for (product of products | search:searchText; track product.id) {
+        <div class="card border border-none transition-transform duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">
+          <div [routerLink]="['/details', product.id]" class="card border border-green-400/50 rounded-md overflow-hidden shadow relative">
+            <div class="card-img">
+              <img [src]="product.imageCover" class="w-full" [alt]="product.title">
+            </div>
+            <div class="card-body px-2 py-4">
+              <h4 class="text-green-500 text-xs">{{ product.category.name }}</h4>
+              <h3 class="font-medium">{{ product.title.split(' ',2).join(' ') }}</h3>
+              <div class="flex justify-between items-center">
+                <span>{{ product.price }} EGP</span>
+                <div class="flex items-center">
+                  <i class="fas fa-star !text-yellow-300"></i>
+                  <span class="text-gray-500">{{ product.ratingsAverage }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button (click)="addToCartBtn(product.id)" class="bg-green-600 text-white py-2 px-10 border rounded w-full">
+            {{ 'home.addTocart' | translate }}
+          </button>
+        </div>
+      }
+    </div>
+  </section>
+  

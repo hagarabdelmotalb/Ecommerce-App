@@ -1,0 +1,80 @@
+{
+    "navbar":{
+        "home":"Home",
+        "product":"Product",
+        "categories":"Categories",
+        "brands":"Brands",
+        "logout":"Logout",
+        "register":"Register",
+        "signin":"Sign in",
+        "lang":"Lang"
+
+    },
+    "login":{
+        "login":"Login",
+        "email":"Email",
+        "errMsgEmailRequired":"Email is required",
+        "errMsgEmailValid":"Email is required",
+        "password":"Password",
+        "forgetPass":"Forget Password",
+        "errMsgPasswordRequired":"password is required",
+        "errMsgPasswordValid":"Password must start with an uppercase letter and be at least 8 characters long.",
+        "forgetPassword":"Forget Password?",
+        "errMsg":"Incorrect email or password!",
+        "sucsses":"sucsses!"
+
+    },
+    "register":{
+        "registerNow":"Register Now",
+        "name":"Name",
+        "errMsgNameRequired":"Name is required",
+        "errMsgnameMenLen":"Name must be At least 3 characters",
+        "errMsgnameMaxLen":"Name must not exceed 30 characters",
+        "email":"Email",
+        "errMsgEmailRequired":"Email is required",
+        "errMsgEmailValid":"Email is required",
+        "password":"Password",
+        "errMsgPasswordRequired":"password is required",
+        "errMsgPasswordValid":"Password must start with an uppercase letter and be at least 8 characters long.",
+        "repassword":"rePassword",
+        "errMsgrePasswordValid":"Passwords do not match.",
+        "phone":"Phone",
+        "errMsgPhoneRequird":"Phone is required",
+        "errMsgPhoneValid":"Please Enter a valid Number",
+        "register":"Register",
+        "errMsg":"Account Already Exists!",
+        "sucsses":"Acount Created!"
+    },
+    "home":{
+        "categories":"Popular Categories",
+        "products":"Popular Products",
+        "addTocart":"Add To Cart"
+    },
+    "footer":{
+        "freshcart":"Get The FreshCart App",
+        "linkApp":"We will send you a Link,Open it on Your Phone to download the app",
+        "shareApp":"Share App Link",
+        "paymentPartners":"Payment Partners",
+        "Deliveries":"Get Deliveries with FreshCart"
+
+    },
+    "cart":{
+        "shopcart":"Shop Cart",
+        "totalPrice":"Total Items Price",
+        "clearCart":"Clear Cart",
+        "remove":"Remove",
+        "checkout":"Checkout"
+    },
+    "checkout":{
+        "checkout":"Checkout",
+        "details":"Details",
+        "msgDetailsRequired":"details is required",
+        "phone":"Phone",
+        "msgPhoneRequired":"phone is required",
+        "msgPhoneValid":"Please Enter a valid phone Number",
+        "city":"City",
+        "msgCityRequired":"City is required",
+        "cashPayment":"Cash Payment"
+    }
+
+}

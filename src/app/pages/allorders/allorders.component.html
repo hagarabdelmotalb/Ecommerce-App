@@ -1,0 +1,34 @@
+<section class="w-[90%] mx-auto bg-gray-100 px-5 py-5 rounded">
+    <h1 class="text-3xl text-center text-green-600">All Orders</h1>
+    <!--============================order info=============================-->
+    @for (order of orders; track order._id){
+      @for (item of order.cartItems; track item._id) {
+        <div class="grid md:grid-cols-[10%_minmax(0,1fr)]  py-4 border-b-2">
+          <!--======================order image==================== -->
+          <div>
+            <img [src]="item.product.imageCover" [alt]="item.product.title" class="w-full h-[150px]">
+          </div>
+          <!--======================order info======================= -->
+          <div class="flex justify-between items-center">
+            <div class="px-4 py-3">
+              <h2>Name: {{item.product.title}}</h2>
+              <h3>Price: {{item.price}}</h3>
+              <h3></h3>
+            </div>
+          </div>
+        </div>
+      }
+    }
+    <!--==============================order status==========================-->
+    <div>
+      <h2 class="text-3xl text-center text-green-600">order status</h2>
+      <div class="px-4 py-3">
+        <h3>tax</h3>
+        <h3>shipping</h3>
+        <h3>payment method</h3>
+        <h3>is paid boolean</h3> 
+        <h3>is deliverd boolean</h3> 
+      </div>
+    </div>
+</section>
+  

@@ -1,0 +1,77 @@
+{
+    "navbar": {
+      "home": "الرئيسية",
+      "product": "المنتج",
+      "categories": "الفئات",
+      "brands": "العلامات التجارية",
+      "logout": "تسجيل الخروج",
+      "register": "انشاء حساب",
+      "signin": "تسجيل الدخول",
+      "lang": "اللغة"
+    },
+    "login": {
+      "login": "تسجيل الدخول",
+      "email": "البريد الإلكتروني",
+      "errMsgEmailRequired": "البريد الإلكتروني مطلوب",
+      "errMsgEmailValid": "البريد الإلكتروني غير صالح",
+      "password": "كلمة المرور",
+      "forgetPass": "نسيت كلمة المرور",
+      "errMsgPasswordRequired": "كلمة المرور مطلوبة",
+      "errMsgPasswordValid": "يجب أن تبدأ كلمة المرور بحرف كبير وأن تتكون من 8 أحرف على الأقل.",
+      "forgetPassword": "نسيت كلمة المرور؟",
+      "errMsg": "البريد الإلكتروني أو كلمة المرور غير صحيحة!",
+      "sucsses": "تم بنجاح!"
+    },
+    "register": {
+      "registerNow": "سجل الآن",
+      "name": "الاسم",
+      "errMsgNameRequired": "الاسم مطلوب",
+      "errMsgnameMenLen": "يجب أن لا يقل الاسم عن 3 أحرف",
+      "errMsgnameMaxLen": "يجب أن لا يزيد الاسم عن 30 حرفًا",
+      "email": "البريد الإلكتروني",
+      "errMsgEmailRequired": "البريد الإلكتروني مطلوب",
+      "errMsgEmailValid": "البريد الإلكتروني غير صالح",
+      "password": "كلمة المرور",
+      "errMsgPasswordRequired": "كلمة المرور مطلوبة",
+      "errMsgPasswordValid": "يجب أن تبدأ كلمة المرور بحرف كبير وأن تتكون من 8 أحرف على الأقل.",
+      "repassword": "تأكيد كلمة المرور",
+      "errMsgrePasswordValid": "كلمات المرور غير متطابقة.",
+      "phone": "رقم الهاتف",
+      "errMsgPhoneRequird": "رقم الهاتف مطلوب",
+      "errMsgPhoneValid": "يرجى إدخال رقم هاتف صالح",
+      "register": "تسجيل",
+      "errMsg": "الحساب موجود بالفعل!",
+      "sucsses": "تم إنشاء الحساب!"
+    },
+    "home": {
+      "categories": "الفئات الشائعة",
+      "products": "المنتجات الشائعة",
+      "addTocart": "أضف إلى السلة"
+    },
+    "footer": {
+      "freshcart": "احصل على تطبيق FreshCart",
+      "linkApp": "سنرسل لك رابطًا، افتحه على هاتفك لتحميل التطبيق",
+      "shareApp": "مشاركة رابط التطبيق",
+      "paymentPartners": "شركاء الدفع",
+      "Deliveries": "احصل على توصيلات من FreshCart"
+    },
+    "cart": {
+      "shopcart": "سلة التسوق",
+      "totalPrice": "إجمالي سعر العناصر",
+      "clearCart": "إفراغ السلة",
+      "remove": "إزالة",
+      "checkout": "إتمام الشراء"
+    },
+    "checkout": {
+      "checkout": "إتمام الشراء",
+      "details": "التفاصيل",
+      "msgDetailsRequired": "التفاصيل مطلوبة",
+      "phone": "رقم الهاتف",
+      "msgPhoneRequired": "رقم الهاتف مطلوب",
+      "msgPhoneValid": "يرجى إدخال رقم هاتف صالح",
+      "city": "المدينة",
+      "msgCityRequired": "المدينة مطلوبة",
+      "cashPayment": "الدفع نقدًا"
+    }
+  }
+  
